@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Lab6.Models.Employees>
+
+<h2>Employees List</h2>
+
+<a asp-controller="AddNewEmployee" asp-action="Create" class="btn btn-success">Add New Employee</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Data</th>
+            <th>   </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var employee in Model)
+        {
+                    <tr>
+                        <td>@employee.FirstName</td>
+                        <td>@employee.LastName</td>
+                        <td>@employee.Email</td>
+                         <th>@employee.DateTime</th>
+                          <td style="text-align:right;"> 
+
+                        <button>
+                                Delete
+                            </button>
+
+                            <button>
+                                    Change
+                                </button>
+                    </tr>
+
+        }
+    </tbody>
+</table>
